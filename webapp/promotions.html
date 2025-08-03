@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>ShopBot - Акции</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/static/home.png" as="image">
+    <link rel="preload" href="/static/category.png" as="image">
+    <link rel="preload" href="/static/discount.png" as="image">
+    <link rel="preload" href="/static/shopping-cart.png" as="image">
+    <link rel="prefetch" href="/catalog.html">
+    <link rel="prefetch" href="/index.html">
+    <link rel="prefetch" href="/cart.html">
+    <link rel="prefetch" href="/product.html">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Акции</h1>
+        <div class="promo-list" id="promo-list"></div>
+    </div>
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-btn"><img src="/static/home.png" alt="Home"><span>Главная</span></a>
+        <a href="catalog.html" class="nav-btn"><img src="/static/category.png" alt="Catalog"><span>Каталог</span></a>
+        <a href="promotions.html" class="nav-btn active"><img src="/static/discount.png" alt="Promo"><span>Акции</span></a>
+        <a href="cart.html" class="nav-btn"><img src="/static/shopping-cart.png" alt="Cart"><span>Корзина</span></a>
+        <div class="nav-line"></div>
+    </nav>
+    <script src="/static/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Telegram.WebApp.ready();
+            Telegram.WebApp.expand();
+            Telegram.WebApp.BackButton.hide();
+            loadPromotions();
+        });
+    </script>
+</body>
+</html>

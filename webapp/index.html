@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+        <title>ShopBot - Главная</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="/static/home.png" as="image">
+        <link rel="preload" href="/static/category.png" as="image">
+        <link rel="preload" href="/static/discount.png" as="image">
+        <link rel="preload" href="/static/shopping-cart.png" as="image">
+        <!-- Добавляем предзагрузку других страниц -->
+        <link rel="prefetch" href="/catalog.html">
+        <link rel="prefetch" href="/promotions.html">
+        <link rel="prefetch" href="/cart.html">
+        <link rel="prefetch" href="/product.html">
+    </head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="user-profile">
+                <div class="avatar">Г</div>
+                <span class="user-name">
+                    <span class="user-name-inner">Гость</span>
+                </span>
+            </div>
+            <a href="https://t.me/Only_style_SPB" class="tg-button">
+                <img src="/static/tg_icon.png" alt="Telegram" class="tg-icon">
+                <div class="tg-text">
+                    <span class="tg-handle">@Only_style_SPB</span>
+                    <span class="tg-description">наш Telegram-канал</span>
+                </div>
+            </a>
+        </header>
+        <section class="info-blocks">
+            <a href="https://teletype.in/@richmagicbot/6PgelFUoeXy" class="info-block">
+                <h3>Доставка и оплата</h3>
+                <div class="icon-container">
+                    <div class="icon-background"></div>
+                    <img src="/static/delivery.png" alt="Доставка и оплата" class="bottom-icon">
+                </div>
+            </a>
+            <a href="https://teletype.in/@richmagicbot/HNlqC6jmcjc" class="info-block">
+                <h3>Возврат товара</h3>
+                <div class="icon-container">
+                    <div class="icon-background"></div>
+                    <img src="/static/return.png" alt="Возврат товара" class="bottom-icon">
+                </div>
+            </a>
+            <a href="https://teletype.in/@richmagicbot/jHB6aPwfzoy" class="info-block">
+                <h3>Режим работы</h3>
+                <div class="icon-container">
+                    <div class="icon-background"></div>
+                    <img src="/static/schedule.png" alt="Режим работы" class="bottom-icon">
+                </div>
+            </a>
+            <a href="https://teletype.in/@richmagicbot/uAO5MAQqT1e" class="info-block">
+                <h3>Гарантии</h3>
+                <div class="icon-container">
+                    <div class="icon-background"></div>
+                    <img src="/static/warranty.png" alt="Гарантии" class="bottom-icon">
+                </div>
+            </a>
+        </section>
+        <section class="additional-blocks">
+            <div class="left-blocks">
+                <a href="https://teletype.in/@richmagicbot/_MOO3e8QQvY" class="additional-block">
+                    <div class="text-content" id="Politic">
+                        <h3>Политика<br>конфиденциальности</h3>
+                    </div>
+                </a>
+                <a href="https://teletype.in/@richmagicbot/No4_K8gP1HI" class="additional-block">
+                    <div class="text-content">
+                        <h3>Почему именно мы?</h3>
+                        <p class="description">Узнайте, почему выбирают нас</p>
+                    </div>
+                </a>
+            </div>
+            <div class="right-block">
+                <a href="catalog.html" class="additional-block large-block">
+                    <h3>Посмотреть товары</h3>
+                    <div class="catalog-arrow-container">
+                        <div class="arrow-background"></div>
+                        <img src="/static/right-arrow.png" alt="Right Arrow" class="right-arrow-icon">
+                    </div>
+                </a>
+            </div>
+        </section>
+        <a href="https://t.me/+RdOEgZI80dk1NWE6" class="additional-block" id="reviews-block">
+            <div class="reviews-container">
+                <div class="reviews-text">
+                    <h3>Отзывы</h3>
+                    <p class="description">Посмотрите мнение наших клиентов</p>
+                </div>
+                <div class="stars">
+                    <img src="/static/star.png" alt="Star" class="star-icon">
+                    <img src="/static/star.png" alt="Star" class="star-icon">
+                    <img src="/static/star.png" alt="Star" class="star-icon">
+                    <img src="/static/star.png" alt="Star" class="star-icon">
+                    <img src="/static/star.png" alt="Star" class="star-icon">
+                </div>
+            </div>
+        </a>
+        <div class="main-banner" id="main-banner"></div>
+        <!-- Добавляем категории и товары -->
+        <div class="category-banners" id="home-category-banners"></div>
+        <div class="catalog-grid" id="home-catalog-grid"></div>
+    </div>
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-btn active"><img src="/static/home.png" alt="Home"><span>Главная</span></a>
+        <a href="catalog.html" class="nav-btn"><img src="/static/category.png" alt="Catalog"><span>Каталог</span></a>
+        <a href="promotions.html" class="nav-btn"><img src="/static/discount.png" alt="Promo"><span>Акции</span></a>
+        <a href="cart.html" class="nav-btn"><img src="/static/shopping-cart.png" alt="Cart"><span>Корзина</span></a>
+        <div class="nav-line"></div> <!-- Добавляем линию -->
+    </nav>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>ShopBot - Товар</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/static/home.png" as="image">
+    <link rel="preload" href="/static/category.png" as="image">
+    <link rel="preload" href="/static/discount.png" as="image">
+    <link rel="preload" href="/static/shopping-cart.png" as="image">
+    <link rel="prefetch" href="/catalog.html">
+    <link rel="prefetch" href="/promotions.html">
+    <link rel="prefetch" href="/cart.html">
+    <link rel="prefetch" href="/index.html">
+</head>
+<body>
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-detail-image" id="product-image"></div>
+            <h1 id="product-name"></h1>
+            <div class="product-detail-header">
+                <p id="product-price"></p>
+                <button class="add-to-cart-button" onclick="addToCart()">Добавить в корзину</button>
+            </div>
+            <div class="product-detail-colors" id="product-colors"></div>
+            <div class="product-detail-sizes" id="product-sizes"></div>
+            <div class="description-toggle" onclick="toggleDescription()">
+                <div class="text-content">
+                    <h3>Описание товара</h3>
+                </div>
+                <div class="arrow-container">
+                    <div class="icon-background"></div>
+                    <img src="/static/arrow.png" alt="Arrow" class="arrow-icon">
+                </div>
+            </div>
+            <div class="product-detail-info" id="product-description-container">
+                <p id="product-description"></p>
+            </div>
+            <h2 class="similar-products-title">Похожие товары</h2>
+            <div class="catalog-grid" id="similar-products"></div>
+        </div>
+    </div>
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-btn"><img src="/static/home.png" alt="Home"><span>Главная</span></a>
+        <a href="catalog.html" class="nav-btn active"><img src="/static/category.png" alt="Catalog"><span>Каталог</span></a>
+        <a href="promotions.html" class="nav-btn"><img src="/static/discount.png" alt="Promo"><span>Акции</span></a>
+        <a href="cart.html" class="nav-btn"><img src="/static/shopping-cart.png" alt="Cart"><span>Корзина</span></a>
+        <div class="nav-line"></div>
+    </nav>
+    <script src="/static/script.js"></script>
+</body>
+</html>

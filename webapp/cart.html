@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>ShopBot - Корзина</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/static/home.png" as="image">
+    <link rel="preload" href="/static/category.png" as="image">
+    <link rel="preload" href="/static/discount.png" as="image">
+    <link rel="preload" href="/static/shopping-cart.png" as="image">
+    <link rel="prefetch" href="/catalog.html">
+    <link rel="prefetch" href="/promotions.html">
+    <link rel="prefetch" href="/index.html">
+    <link rel="prefetch" href="/product.html">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Корзина</h1>
+        <div class="cart-list" id="cart-items"></div>
+        <div class="cart-footer">
+            <p id="total"></p>
+            <button class="checkout-button" onclick="startCheckout()">Оформить заказ</button>
+        </div>
+    </div>
+    <div class="modal" id="checkout-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-title">Оформление заказа</h2>
+            <div id="step-1" class="checkout-step" style="display: none;">
+                <input type="text" id="delivery-address" placeholder="Полный адрес доставки" required>
+                <button onclick="nextStep(1)">Продолжить оформление заказа</button>
+                <button type="button" onclick="closeModal()">Отмена</button>
+            </div>
+            <div id="step-2" class="checkout-step" style="display: none;">
+                <h3>Выберите тип получения заказа</h3>
+                <div class="delivery-options">
+                    <div class="delivery-option pickup-option">
+                        <label>
+                            <input type="radio" name="delivery-type" value="pickup" onclick="showPickupOptions()"> Самовывоз
+                        </label>
+                        <div id="pickup-options" class="sub-options" style="display: none;">
+                            <label><input type="radio" name="pickup-method" value="sdek"> СДЭК</label>
+                            <label id="store-pickup-option" style="display: none;"><input type="radio" name="pickup-method" value="store"> Забрать со склада</label>
+                        </div>
+                    </div>
+                    <div class="delivery-option delivery-door-option">
+                        <label>
+                            <input type="radio" name="delivery-type" value="delivery" onclick="showDeliveryOptions()"> Доставка до двери
+                        </label>
+                        <div id="delivery-options" class="sub-options" style="display: none;">
+                            <label><input type="radio" name="delivery-method" value="sdek"> СДЭК</label>
+                            <label id="yandex-option" style="display: none;"><input type="radio" name="delivery-method" value="yandex"> Яндекс Доставка</label>
+                            <label id="store-delivery-option" style="display: none;"><input type="radio" name="delivery-method" value="store"> Доставка сотрудником магазина</label>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 14px; color: #666; margin: 10px 0;">Стоимость доставки не входит в итоговую сумму и оплачивается отдельно.</p>
+                <button onclick="triggerButtonAnimation(); setTimeout(() => nextStep(2), 50)" id="step-2-next">Продолжить оформление заказа</button>
+                <button type="button" onclick="closeModal()">Отмена</button>
+            </div>
+            <div id="step-3" class="checkout-step" style="display: none;">
+                <input type="text" id="customer-name" placeholder="Ваше ФИО" required>
+                <input type="tel" id="customer-phone" placeholder="Номер телефона, например: +79991234567" required>
+                <button onclick="finishOrder()">Закончить оформление заказа</button>
+                <button type="button" onclick="closeModal()">Отмена</button>
+            </div>
+            <div id="step-4" class="checkout-step" style="display: none;">
+                <h3>Заказ успешно оформлен!</h3>
+                <p>Ваш заказ принят в обработку. Скоро с Вами свяжется модератор.</p>
+                <button onclick="closeModal()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-btn"><img src="/static/home.png" alt="Home"><span>Главная</span></a>
+        <a href="catalog.html" class="nav-btn"><img src="/static/category.png" alt="Catalog"><span>Каталог</span></a>
+        <a href="promotions.html" class="nav-btn"><img src="/static/discount.png" alt="Promo"><span>Акции</span></a>
+        <a href="cart.html" class="nav-btn active"><img src="/static/shopping-cart.png" alt="Cart"><span>Корзина</span></a>
+        <div class="nav-line"></div>
+    </nav>
+    <script src="/static/script.js"></script>
+</body>
+</html>
